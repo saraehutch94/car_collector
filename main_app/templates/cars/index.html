@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %} {% for car in cars %}
 <div>
-  <a href="/cars/{{ car.id }}">
+  <a href="{% url 'detail' car.id %}">
     <span>{{ car.make }}</span>
     <span>{{ car.model }}</span>
     <span>{{ car.color }}</span>
