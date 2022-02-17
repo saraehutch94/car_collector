@@ -1,8 +1,10 @@
 {% extends 'base.html' %} {% block content %} {% for car in cars %}
 <div>
-  <span>{{ car.make }}</span>
-  <span>{{ car.model }}</span>
-  <span>{{ car.color }}</span>
-  <span>{{ car.description }}</span>
+  <a href="/cars/{{ cat.id }}">
+    <span>{{ car.make }}</span>
+    <span>{{ car.model }}</span>
+    <span>{{ car.color }}</span>
+    <span>{{ car.description }}</span>
+  </a>
 </div>
 {% endfor %} {% endblock %}
