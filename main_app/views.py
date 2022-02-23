@@ -38,3 +38,7 @@ class TreeList(ListView):
 
 class TreeDetail(DetailView):
     model = Tree
+
+class TreeCreate(CreateView):
+    model = Tree
+    fields = '__all__'
