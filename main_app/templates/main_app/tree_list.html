@@ -4,8 +4,10 @@
 
 {% for tree in object_list %}
 <div>
-  <span>{{ tree.scent }}</span>
-  <span>{{ tree.color }}</span>
-  <span>{{ tree.description }}</span>
+  <a href="{% url 'trees_detail' tree.id %}">
+    <span>{{ tree.scent }}</span>
+    <span>{{ tree.color }}</span>
+    <span>{{ tree.description }}</span>
+  </a>
 </div>
 {% endfor %} {% endblock %}
