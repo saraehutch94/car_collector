@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Car
+from .models import Car, Tree
 
 # Create your views here.
 
@@ -32,3 +32,6 @@ class CarUpdate(UpdateView):
 class CarDelete(DeleteView):
     model = Car
     success_url = '/cars/'
+
+class TreeList(ListView):
+    model = Tree
