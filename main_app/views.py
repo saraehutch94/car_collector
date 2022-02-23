@@ -35,3 +35,6 @@ class CarDelete(DeleteView):
 
 class TreeList(ListView):
     model = Tree
+
+class TreeDetail(DetailView):
+    model = Tree
