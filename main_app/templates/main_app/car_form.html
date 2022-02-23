@@ -1,7 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
 <form action="" method="POST">
-  {% csrf_token %} {{ form }}
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
   <input type="submit" value="Add Car" />
 </form>
 
