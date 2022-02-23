@@ -6,6 +6,9 @@
   <div class="tree-detail">{{ object.scent }}</div>
   <div class="tree-detail">{{ object.color }}</div>
   <div class="tree-detail">{{ object.description }}</div>
+  <div class="tree-action">
+    <a href="{% url 'trees_update' object.id %}">Edit</a>
+  </div>
 </div>
 
 {% endblock %}
