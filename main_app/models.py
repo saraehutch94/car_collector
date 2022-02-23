@@ -24,4 +24,4 @@ class Tree(models.Model):
         return self.scent
 
     def get_absolute_url(self):
-        return reverse('tree_detail', kwargs={'pk': self.id})
+        return reverse('trees_detail', kwargs={'pk': self.id})
