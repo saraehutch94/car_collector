@@ -42,3 +42,7 @@ class TreeDetail(DetailView):
 class TreeCreate(CreateView):
     model = Tree
     fields = '__all__'
+
+class TreeUpdate(UpdateView):
+    model = Tree
+    fields = '__all__'
