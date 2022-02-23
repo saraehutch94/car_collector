@@ -21,4 +21,4 @@ class Tree(models.Model):
     description = models.CharField(max_length=250)
 
     def __str__(self):
-        return (f'{self.scent}')
+        return self.scent
