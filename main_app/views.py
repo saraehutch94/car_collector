@@ -46,3 +46,7 @@ class TreeCreate(CreateView):
 class TreeUpdate(UpdateView):
     model = Tree
     fields = '__all__'
+
+class TreeDelete(DeleteView):
+    model = Tree
+    success_url = '/trees/'
