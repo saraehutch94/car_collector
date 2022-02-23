@@ -7,5 +7,9 @@
   <div class="car-detail">{{ car.color }}</div>
   <div class="car-detail">{{ car.description }}</div>
 </div>
+<div class="car-action">
+  <a href="{% url 'cars_update' car.id %}">Edit</a>
+  <a href="{% url 'cars_delete' car.id %}">Delete</a>
+</div>
 
 {% endblock %}
