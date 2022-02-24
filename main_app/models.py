@@ -35,7 +35,7 @@ class Tree(models.Model):
 
 class Gas(models.Model):
     date = models.DateField()
-    fill = models.CharField(max_length=1)
+    fill = models.CharField(max_length=1, choices=FILLS, default=FILLS[0][0])
     car = models.ForeignKey(Car, on_delete=models.CASCADE) 
 
     def __str__(self):
