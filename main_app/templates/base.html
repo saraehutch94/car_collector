@@ -8,10 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
   </head>
   <body>
     <header>
-      <ul>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'index' %}">View All Cars</a></li>
         <li><a href="{% url 'cars_create' %}">Add A Car</a></li>

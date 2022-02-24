@@ -3,6 +3,13 @@ from django.urls import reverse
 
 # Create your models here.
 
+FILLS = (
+    ('1', 'Week 1'),
+    ('2', 'Week 2'),
+    ('3', 'Week 3'),
+    ('4', 'Week 4'),
+)
+
 class Car(models.Model):
     make = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
@@ -25,3 +32,7 @@ class Tree(models.Model):
 
     def get_absolute_url(self):
         return reverse('trees_detail', kwargs={'pk': self.id})
+
+class Gas(models.Model):
+    date = models.DateField()
+    fill = models.CharField(max_length=1)
