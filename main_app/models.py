@@ -36,3 +36,6 @@ class Tree(models.Model):
 class Gas(models.Model):
     date = models.DateField()
     fill = models.CharField(max_length=1)
+
+    def __str__(self):
+        return f'{self.get_fill_display()} on {self.date}'
