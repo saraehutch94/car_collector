@@ -14,4 +14,5 @@ urlpatterns = [
     path('trees/create/', views.TreeCreate.as_view(), name='trees_create'),
     path('trees/<int:pk>/update/', views.TreeUpdate.as_view(), name='trees_update'),
     path('trees/<int:pk>/delete/', views.TreeDelete.as_view(), name='trees_delete'),
+    path('cars/<int:car_id>/add_gas/', views.add_gas, name='add_gas'),
 ]
