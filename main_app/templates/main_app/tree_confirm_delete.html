@@ -4,8 +4,8 @@
 
 <form action="" method="POST">
   {% csrf_token %} {{ form.as_p }}
-  <input type="submit" value="Yes, Delete" />
-  <a href="{% url 'trees_detail' object.id %}">Cancel</a>
+  <input type="submit" value="Yes, Delete" class="btn red" />
+  <a href="{% url 'trees_detail' object.id %}" class="btn blue">Cancel</a>
 </form>
 
 {% endblock %}

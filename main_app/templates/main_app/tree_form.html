@@ -12,11 +12,12 @@
   <input
     type="submit"
     value="{% if object %} Edit {% else %} Add {% endif %}"
+    class="btn blue"
   />
   {% if object %}
-  <a href="{% url 'trees_detail' object.id %}">Cancel</a>
+  <a href="{% url 'trees_detail' object.id %}" class="btn red">Cancel</a>
   {% else %}
-  <a href="{% url 'trees_index' %}">Cancel</a>
+  <a href="{% url 'trees_index' %}" class="btn red">Cancel</a>
   {% endif %}
 </form>
 

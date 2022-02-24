@@ -3,11 +3,13 @@
 <h1>All Little Trees</h1>
 
 {% for tree in object_list %}
-<div>
+<div class="card">
   <a href="{% url 'trees_detail' tree.id %}">
-    <span>{{ tree.scent }}</span>
-    <span>{{ tree.color }}</span>
-    <span>{{ tree.description }}</span>
+    <div class="card-content">
+      <span class="card=title">{{ tree.scent }}</span>
+      <p>{{ tree.color }}</p>
+      <p>{{ tree.description }}</p>
+    </div>
   </a>
 </div>
 {% endfor %} {% endblock %}

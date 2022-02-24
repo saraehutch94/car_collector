@@ -14,18 +14,32 @@
     />
   </head>
   <body>
-    <header>
-        <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="{% url 'index' %}">View All Cars</a></li>
-        <li><a href="{% url 'cars_create' %}">Add A Car</a></li>
-        <li><a href="{% url 'trees_index' %}">View All Little Trees</a></li>
-        <li><a href="{% url 'trees_create' %}">Add A Little Tree</a></li>
-      </ul>
+    <header class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="{% url 'home' %}" class="left brand-logo"
+                >Car Collector</a
+              >
+            </li>
+          </ul>
+          <ul class="right">
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'index' %}">View All Cars</a></li>
+            <li><a href="{% url 'cars_create' %}">Add A Car</a></li>
+            <li><a href="{% url 'trees_index' %}">View All Little Trees</a></li>
+            <li><a href="{% url 'trees_create' %}">Add A Little Tree</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
-    <main>{% block content %} {% endblock %}</main>
-    <footer>
-      <p>All Rights Reserved &copy;</p>
-      <p>2022 Car Collector</p>
+    <main class="container">{% block content %} {% endblock %}</main>
+    <footer class="page-footer">
+      <div class="right">
+        <div>All Rights Reserved &copy;</div>
+        <div>2022 Car Collector</div>
+      </div>
     </footer>
   </body>
 </html>

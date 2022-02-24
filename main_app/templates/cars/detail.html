@@ -2,14 +2,16 @@
 
 <h1>Car Details</h1>
 
-<div class="car">
-  <div class="car-detail">{{ car.make }} {{ car.model }}</div>
-  <div class="car-detail">{{ car.color }}</div>
-  <div class="car-detail">{{ car.description }}</div>
-</div>
-<div class="car-action">
-  <a href="{% url 'cars_update' car.id %}">Edit</a>
-  <a href="{% url 'cars_delete' car.id %}">Delete</a>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ car.make }} {{ car.model }}</span>
+    <p>{{ car.color }}</p>
+    <p>{{ car.description }}</p>
+  </div>
+  <div class="card-action">
+    <a href="{% url 'cars_update' car.id %}">Edit</a>
+    <a href="{% url 'cars_delete' car.id %}">Delete</a>
+  </div>
 </div>
 
 {% endblock %}

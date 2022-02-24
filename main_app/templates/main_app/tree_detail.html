@@ -2,14 +2,17 @@
 
 <h1>Little Tree Details</h1>
 
-<div class="tree">
-  <div class="tree-detail">{{ object.scent }}</div>
-  <div class="tree-detail">{{ object.color }}</div>
-  <div class="tree-detail">{{ object.description }}</div>
-  <div class="tree-action">
-    <a href="{% url 'trees_update' object.id %}">Edit</a>
-    <a href="{% url 'trees_delete' object.id %}">Delete</a>
+<div class="card">
+  <div class="card-content"></div>
+  <span class="card-title">{{ object.scent }}</span>
+  <p class="tree-detail">{{ object.color }}</p>
+  <p class="tree-detail">{{ object.description }}</p>
+  <div>
+    <div class="card-action">
+      <a href="{% url 'trees_update' object.id %}">Edit</a>
+      <a href="{% url 'trees_delete' object.id %}">Delete</a>
+    </div>
   </div>
-</div>
 
-{% endblock %}
+  {% endblock %}
+</div>

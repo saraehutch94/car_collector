@@ -34,7 +34,7 @@ class Tree(models.Model):
         return reverse('trees_detail', kwargs={'pk': self.id})
 
 class Gas(models.Model):
-    date = models.DateField()
+    date = models.DateField('fill date')
     fill = models.CharField(max_length=1, choices=FILLS, default=FILLS[0][0])
     car = models.ForeignKey(Car, on_delete=models.CASCADE) 
 
