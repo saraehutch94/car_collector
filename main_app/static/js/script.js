@@ -1,4 +1,4 @@
-// Date Picker Animation
+// Date Picker Animations
 
 const dateEl = document.getElementById("id_date");
 
@@ -8,3 +8,9 @@ M.Datepicker.init(dateEl, {
   setDefaultDate: true,
   autoClose: true,
 });
+
+// Select Widget Animations
+
+const selectEl = document.getElementById("id_fill");
+
+M.FormSelect.init(selectEl);
