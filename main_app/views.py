@@ -1,9 +1,9 @@
-from re import L
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Car, Tree
+from .forms import GasForm
 
 # Create your views here.
 
@@ -19,7 +19,11 @@ def cars_index(request):
 
 def cars_detail(request, car_id):
     car = Car.objects.get(id=car_id)
-    return render(request, 'cars/detail.html', {'car': car})
+    gas_form = GasForm()
+    return render(request, 'cars/detail.html', {
+        'car': car,
+        'gas_form': gas_form
+    })
 
 class CarCreate(CreateView):
     model = Car
