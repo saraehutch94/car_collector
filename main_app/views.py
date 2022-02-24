@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from ast import Pass
+from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -24,6 +25,14 @@ def cars_detail(request, car_id):
         'car': car,
         'gas_form': gas_form
     })
+
+def add_gas(request, car_id):
+    form = GasForm(request.POST)
+    if form.is_valid():
+        new_gas = form.save(commit=False)
+        new_gas.car_id = car_id
+        new_gas.save()
+    return redirect('detail', car_id=car_id)
 
 class CarCreate(CreateView):
     model = Car
