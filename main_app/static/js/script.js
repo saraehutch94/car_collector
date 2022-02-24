@@ -1,6 +1,9 @@
-// Date Picker Animations
+// Variables
 
 const dateEl = document.getElementById("id_date");
+const selectEl = document.getElementById("id_fill");
+
+// Date Picker Animation
 
 M.Datepicker.init(dateEl, {
   format: "yyyy-mm-dd",
@@ -9,8 +12,6 @@ M.Datepicker.init(dateEl, {
   autoClose: true,
 });
 
-// Select Widget Animations
-
-const selectEl = document.getElementById("id_fill");
+// Select Widget Animation
 
 M.FormSelect.init(selectEl);
