@@ -1,14 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>All Little Trees</h1>
+<h2>All Little Trees</h2>
 
 {% for tree in object_list %}
 <div class="card">
   <a href="{% url 'trees_detail' tree.id %}">
     <div class="card-content">
-      <span class="card=title">{{ tree.scent }}</span>
-      <p>{{ tree.color }}</p>
-      <p>{{ tree.description }}</p>
+      <span class="card-title">{{ tree.scent }}</span>
     </div>
   </a>
 </div>

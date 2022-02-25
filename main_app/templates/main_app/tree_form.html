@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %} {% if object %}
-<h1>Edit {{ object.scent }}</h1>
+<h2>Edit {{ object.scent }}</h2>
 {% else %}
-<h1>Add a Little Tree</h1>
+<h2>Add a Little Tree</h2>
 {% endif %}
 
 <form action="" method="POST">
@@ -12,12 +12,14 @@
   <input
     type="submit"
     value="{% if object %} Edit {% else %} Add {% endif %}"
-    class="btn blue"
+    class="btn brown lighten-1"
   />
   {% if object %}
-  <a href="{% url 'trees_detail' object.id %}" class="btn red">Cancel</a>
+  <a href="{% url 'trees_detail' object.id %}" class="btn brown darken-1"
+    >Cancel</a
+  >
   {% else %}
-  <a href="{% url 'trees_index' %}" class="btn red">Cancel</a>
+  <a href="{% url 'trees_index' %}" class="btn brown darken-1>Cancel</a>
   {% endif %}
 </form>
 

@@ -2,6 +2,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: "Rubik", sans-serif;
 }
 
 main {
@@ -10,4 +11,74 @@ main {
 
 footer {
   padding-top: 0;
+}
+
+h2 {
+  font-family: "Questrial", sans-serif !important;
+}
+
+input[type="text"]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #4e342e !important;
+  box-shadow: 0 1px 0 0 #4e342e !important;
+}
+
+.nav-wrapper {
+  background-color: #684756 !important;
+}
+
+.page-footer {
+  background-color: #684756 !important;
+}
+
+.card-action-link {
+  color: #96705b !important;
+}
+
+.dropdown-content li > a {
+  color: #96705b !important;
+}
+
+.card {
+  padding: 0 0 0 20px !important;
+}
+
+.card-title {
+  color: #684756 !important;
+}
+
+.car-model {
+  color: #96705b !important;
+}
+
+.brand-logo {
+  padding-left: 10px !important;
+}
+
+.datepicker-date-display {
+  background-color: #4e342e !important;
+}
+
+.datepicker-table td.is-today {
+  background-color: #4e342e !important;
+}
+
+.datepicker-done {
+  color: #684756 !important;
+}
+
+.datepicker-cancel {
+  color: #684756 !important;
+}
+
+.brand-logo {
+  font-family: "Questrial", sans-serif !important;
+}
+
+.footer-content {
+  padding-bottom: 10px;
+}
+
+.menu {
+  font-size: 20px;
+  padding-right: 10px;
 }

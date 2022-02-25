@@ -1,11 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Are you sure you want to delete the {{ object.scent }} tree?</h1>
+<h2>Are you sure you want to delete the {{ object.scent }} tree?</h2>
 
 <form action="" method="POST">
   {% csrf_token %} {{ form.as_p }}
-  <input type="submit" value="Yes, Delete" class="btn red" />
-  <a href="{% url 'trees_detail' object.id %}" class="btn blue">Cancel</a>
+  <input type="submit" value="Yes, Delete" class="btn brown lighten-1" />
+  <a href="{% url 'trees_detail' object.id %}" class="btn brown darken-1"
+    >Cancel</a
+  >
 </form>
 
 {% endblock %}

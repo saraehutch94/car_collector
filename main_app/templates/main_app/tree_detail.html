@@ -1,18 +1,21 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Little Tree Details</h1>
+<h2>{{ object.scent }} Details</h2>
 
 <div class="card">
   <div class="card-content"></div>
   <span class="card-title">{{ object.scent }}</span>
-  <p class="tree-detail">{{ object.color }}</p>
-  <p class="tree-detail">{{ object.description }}</p>
+  <p class="tree-detail">Color: {{ object.color }}</p>
+  <p class="tree-detail">Description: {{ object.description }}</p>
   <div>
     <div class="card-action">
-      <a href="{% url 'trees_update' object.id %}">Edit</a>
-      <a href="{% url 'trees_delete' object.id %}">Delete</a>
+      <a href="{% url 'trees_update' object.id %}" class="card-action-link"
+        >Edit</a
+      >
+      <a href="{% url 'trees_delete' object.id %}" class="card-action-link"
+        >Delete</a
+      >
     </div>
   </div>
-
-  {% endblock %}
 </div>
+{% endblock %}
