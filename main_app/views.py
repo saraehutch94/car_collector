@@ -20,10 +20,12 @@ def cars_index(request):
 
 def cars_detail(request, car_id):
     car = Car.objects.get(id=car_id)
+    trees_car_doesnt_have = Tree.objects.exclude(id__in = car.trees.all().values_list('id'))
     gas_form = GasForm()
     return render(request, 'cars/detail.html', {
         'car': car,
-        'gas_form': gas_form
+        'gas_form': gas_form,
+        'trees': trees_car_doesnt_have
     })
 
 def add_gas(request, car_id):
