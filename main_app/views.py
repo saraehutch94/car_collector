@@ -28,6 +28,10 @@ def cars_detail(request, car_id):
         'trees': trees_car_doesnt_have
     })
 
+def assoc_tree(request, car_id, tree_id):
+    Car.objects.get(id=car_id).trees.add(tree_id)
+    return redirect('detail', car_id=car_id)
+
 def add_gas(request, car_id):
     form = GasForm(request.POST)
     if form.is_valid():

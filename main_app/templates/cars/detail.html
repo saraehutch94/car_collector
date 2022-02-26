@@ -69,7 +69,7 @@
         <span class="card-title"> {{ tree.scent }} </span>
       </div>
       <div class="card-action">
-        <form action="" method="POST">
+        <form action="{% url 'assoc_tree' car.id tree.id %}" method="POST">
           {% csrf_token %}
           <button type="submit" class="btn">Add</button>
         </form>
