@@ -55,6 +55,15 @@
         <span class="card-title">
           <span class="{{ tree.color }}-text">{{tree.scent}}</span>
         </span>
+        <div class="card-action">
+          <form
+            action="{% url 'delete_tree_from_car' car.id tree.id %}"
+            method="POST"
+          >
+            {% csrf_token %}
+            <input type="submit" class="btn" value="Remove" />
+          </form>
+        </div>
       </div>
     </div>
     {% endfor %} {% else %}
