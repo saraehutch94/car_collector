@@ -46,7 +46,11 @@ def add_gas(request, car_id):
 
 class CarCreate(CreateView):
     model = Car
-    fields = '__all__'
+    fields = ('make', 'model', 'color', 'description')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class CarUpdate(UpdateView):
     model = Car
