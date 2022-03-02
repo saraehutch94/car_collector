@@ -5,6 +5,8 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Car, Tree
 from .forms import GasForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
 # Create your views here.
 
@@ -43,6 +45,19 @@ def add_gas(request, car_id):
         new_gas.car_id = car_id
         new_gas.save()
     return redirect('detail', car_id=car_id)
+
+def signup(request):
+    error_message = ''
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid:
+            user = form.save()
+            login(request, user)
+            return redirect('index')
+        else:
+            error_message = 'Invalid sign-up credentials. Please try again.'
+    form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form, 'error_message': error_message})
 
 class CarCreate(CreateView):
     model = Car
