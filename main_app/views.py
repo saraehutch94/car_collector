@@ -7,6 +7,8 @@ from .models import Car, Tree
 from .forms import GasForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -16,10 +18,12 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+@login_required
 def cars_index(request):
     cars = Car.objects.all()
     return render(request, 'cars/index.html', {'cars': cars})
 
+@login_required
 def cars_detail(request, car_id):
     car = Car.objects.get(id=car_id)
     trees_car_doesnt_have = Tree.objects.exclude(id__in = car.trees.all().values_list('id'))
@@ -30,14 +34,17 @@ def cars_detail(request, car_id):
         'trees': trees_car_doesnt_have
     })
 
+@login_required
 def assoc_tree(request, car_id, tree_id):
     Car.objects.get(id=car_id).trees.add(tree_id)
     return redirect('detail', car_id=car_id)
 
+@login_required
 def delete_tree_from_car(request, car_id, tree_id):
     Car.objects.get(id=car_id).trees.remove(tree_id)
     return redirect('detail', car_id=car_id)
 
+@login_required
 def add_gas(request, car_id):
     form = GasForm(request.POST)
     if form.is_valid():
@@ -59,7 +66,7 @@ def signup(request):
     form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form, 'error_message': error_message})
 
-class CarCreate(CreateView):
+class CarCreate(LoginRequiredMixin, CreateView):
     model = Car
     fields = ('make', 'model', 'color', 'description')
 
@@ -67,28 +74,28 @@ class CarCreate(CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class CarUpdate(UpdateView):
+class CarUpdate(LoginRequiredMixin, UpdateView):
     model = Car
     fields = '__all__'
 
-class CarDelete(DeleteView):
+class CarDelete(LoginRequiredMixin, DeleteView):
     model = Car
     success_url = '/cars/'
 
-class TreeList(ListView):
+class TreeList(LoginRequiredMixin, ListView):
     model = Tree
 
-class TreeDetail(DetailView):
+class TreeDetail(LoginRequiredMixin, DetailView):
     model = Tree
 
-class TreeCreate(CreateView):
-    model = Tree
-    fields = '__all__'
-
-class TreeUpdate(UpdateView):
+class TreeCreate(LoginRequiredMixin, CreateView):
     model = Tree
     fields = '__all__'
 
-class TreeDelete(DeleteView):
+class TreeUpdate(LoginRequiredMixin, UpdateView):
+    model = Tree
+    fields = '__all__'
+
+class TreeDelete(LoginRequiredMixin, DeleteView):
     model = Tree
     success_url = '/trees/'
