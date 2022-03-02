@@ -30,6 +30,8 @@ class Car(models.Model):
     trees = models.ManyToManyField(Tree)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    # comment
+
     def __str__(self):
         return (f'{self.make} {self.model}')
 
