@@ -19,6 +19,34 @@
         >
       </div>
     </div>
+    {% for photo in car.photo_set.all %}
+
+    <img
+      src="{{ photo.url }}"
+      alt="{{ car.make }}"
+      class="responsive-img card-panel"
+    />
+
+    {% empty %}
+
+    <div class="card-panel center-align">
+      <span class="card-action-link">No Photos Uploaded</span>
+    </div>
+
+    {% endfor %}
+
+    <form
+      action="{% url 'add_photo' car.id %}"
+      class="card-panel"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <input type="file" name="photo-file" />
+      <br />
+      <br />
+      <input type="submit" value="Add Photo" class="btn brown darken-3" />
+    </form>
   </div>
   <div class="col s6">
     <form action="{% url 'add_gas' car.id %}" method="POST">
