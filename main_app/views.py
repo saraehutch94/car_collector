@@ -100,7 +100,7 @@ class CarCreate(LoginRequiredMixin, CreateView):
 
 class CarUpdate(LoginRequiredMixin, UpdateView):
     model = Car
-    fields = '__all__'
+    fields = ('make', 'model', 'color', 'description')
 
 class CarDelete(LoginRequiredMixin, DeleteView):
     model = Car
