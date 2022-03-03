@@ -18,4 +18,5 @@ urlpatterns = [
     path('cars/<int:car_id>/assoc_tree/<int:tree_id>', views.assoc_tree, name='assoc_tree'),
     path('cars/<int:car_id>/delete_tree_from_car/<int:tree_id>/', views.delete_tree_from_car, name='delete_tree_from_car'),
     path('accounts/signup/', views.signup, name='signup'),
+    path('cars/<int:car_id>/add_photo/', views.add_photo, name='add_photo'),
 ]
